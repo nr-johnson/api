@@ -6,6 +6,7 @@ const boolParser = require('express-query-boolean')
 const connectMongo = require('./functions/connect-mongo')
 const http = require('http')
 const ops = require('./functions/ops')
+const pkg = require('./package.json')
 
 const app = express()
 
@@ -38,13 +39,16 @@ const dataRoutes = require('./routes/dataRoutes')
 app.use('/data', dataRoutes)
 
 app.use('/', (req, res) => {
-    res.send({
-        data_functions : {
-            url_structure: '/data/<database>/<collection>?<queries>',
-            integration: 'MongoDB',
-            methods: 'get, put, post, delete',
-            note: "'/data' will return a list of all databases. '/data/<database>' will return a list of all collections in that database. '/data/<database>/<collection>' will return all documents within that collection. Query parameters are used to get/modify specfic documents or collections."
-        }
+    res.json({
+        message: `Welcome to ${pkg.name}!`,
+        routes: {
+            database: {
+                databases: '/data',
+                collections: '/data/<database>?<query?',
+                documents: '/data/<database>/<collection>?<query>'
+            }
+        },
+        notes: "See README for more information."
     })
 })
 
