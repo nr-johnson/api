@@ -17,6 +17,8 @@ Query strings are used to filter collection and document requests. As of right n
 ## Key Features
 ### White list authentication
 I have a simple check at the start of the app that verifies that the requesting IP or url is on a list. This list is stored as a comma seperated enviornment variable. If the visitor is from an unauthorized source the server returns a `403` status and `Access Denied` message.
+
+As a side note, for a React app to access the API I had to set headers in the Nginx server to allow the requests from each site.
 ### MongoDB Database
 The project is set up to connect to a cloud hosted [MonogDB](https://www.mongodb.com/ "MongoDB Webpage") database. The authentication url is stored as an envirnment variable.
 ### Cloudinary File Storage
