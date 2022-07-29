@@ -40,7 +40,9 @@ app.use('/data', dataRoutes)
 
 app.use('/', (req, res) => {
     res.json({
-        message: `Welcome to ${pkg.name}!`,
+        message: `Welcome to ${pkg.author}'s API!`,
+        description: pkg.description,
+        author: pkg.author,
         routes: {
             database: {
                 databases: '/data',
