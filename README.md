@@ -20,7 +20,7 @@ I have a simple check at the start of the app that verifies that the requesting 
 
 As a side note, for a React app to access the API I had to set headers in the Nginx server to allow the requests from each site.
 ### MongoDB Database
-The project is set up to connect to a cloud hosted [MonogDB](https://www.mongodb.com/ "MongoDB Webpage") database. The authentication url is stored as an envirnment variable.
+The project is set up to connect to a cloud hosted [MonogDB](https://www.mongodb.com/ "MongoDB Webpage") database. The authentication url is stored as an enviornment variable.
 ### Cloudinary File Storage
 The project is/will be set up to connect to [Cloudinary](https://cloudinary.com "Cloudinary Webpage") file hosting. The authentication configurations are set up as enviornment variables.
 
