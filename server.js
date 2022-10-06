@@ -15,7 +15,7 @@ app.use((req, res, next) => {
     const ip = req.headers['x-real-ip'] || req.header('x-forwarded-for') || req.connection.remoteAddress
     const whitelist = process.env.WHITELIST.split(',')
     let message = `Incoming Request. IP: ${ip}`
-    
+    console.log(ip)
     if(whitelist.includes(ip)) {
         console.log(`${message} - Granted`)
         next()
